@@ -1,0 +1,81 @@
+{
+  "schema": "awesome-lab-devices/v1",
+  "name": "awesome-lab-devices",
+  "description": "Uni-Lab-OS 设备驱动包索引：OpenLab 前端从这里读取可安装目录，把 spec 下发给微后端 / Edge 执行 pip install。",
+  "homepage": "https://github.com/Xuwznln/awesome-lab-devices",
+  "updated_at": "2026-09-03",
+  "packages": [
+    {
+      "name": "site_demo",
+      "spec": "git+https://github.com/Xuwznln/LabDeviceSiteDemo.git",
+      "version": "0.2.0",
+      "description": "位点与物料演示：host/slave 双进程、available_sites 固定位点、deck / 枪头盒 / 孔板物料 CRUD 与 set_substance。",
+      "homepage": "https://github.com/Xuwznln/LabDeviceSiteDemo",
+      "devices": ["material_bench_demo", "sample_rack_demo"],
+      "tags": ["demo", "sites", "materials", "host-slave"],
+      "official": true,
+      "category": "demo",
+      "maintainers": ["Xuwznln"]
+    },
+    {
+      "name": "workstation_demo",
+      "spec": "git+https://github.com/Xuwznln/LabDeviceWorkstationDemo.git",
+      "version": "0.2.0",
+      "description": "工作站演示：hardware_interface 代理共享通信端点（串口 + Modbus / extra_info），一台工作站带多个子设备。",
+      "homepage": "https://github.com/Xuwznln/LabDeviceWorkstationDemo",
+      "devices": ["demo_workstation", "echo_reader", "io_mock_modbus", "serial_mock", "modbus_sensor"],
+      "tags": ["demo", "workstation", "hardware-interface", "serial", "modbus"],
+      "official": true,
+      "category": "demo",
+      "maintainers": ["Xuwznln"]
+    },
+    {
+      "name": "lan_demo",
+      "spec": "git+https://github.com/Xuwznln/LabDeviceLanDemo.git",
+      "version": "0.2.0",
+      "description": "局域网双运行时演示：跨设备 @subscribe + call_device_action 闭环。",
+      "homepage": "https://github.com/Xuwznln/LabDeviceLanDemo",
+      "devices": ["hub_node_demo", "status_reporter_demo"],
+      "tags": ["demo", "lan", "subscribe", "multi-runtime"],
+      "official": true,
+      "category": "demo",
+      "maintainers": ["Xuwznln"]
+    },
+    {
+      "name": "inventory_demo",
+      "spec": "git+https://github.com/Xuwznln/LabDeviceInventoryDemo.git",
+      "version": "0.1.0",
+      "description": "库存演示：试剂入库、按数量预留与出库扣减、数量不足拒绝。",
+      "homepage": "https://github.com/Xuwznln/LabDeviceInventoryDemo",
+      "devices": ["reagent_dispenser_demo", "reagent_store_demo"],
+      "tags": ["demo", "inventory", "materials", "reagents"],
+      "official": true,
+      "category": "demo",
+      "maintainers": ["Xuwznln"]
+    },
+    {
+      "name": "lock_demo",
+      "spec": "git+https://github.com/Xuwznln/LabDeviceLockDemo.git",
+      "version": "0.1.0",
+      "description": "调度锁演示：动作锁串行、always_free 并行、物料锁按板互斥，从设备账本审计。",
+      "homepage": "https://github.com/Xuwznln/LabDeviceLockDemo",
+      "devices": ["lock_auditor_demo", "lock_probe_demo"],
+      "tags": ["demo", "scheduler", "locks"],
+      "official": true,
+      "category": "demo",
+      "maintainers": ["Xuwznln"]
+    },
+    {
+      "name": "exception_demo",
+      "spec": "git+https://github.com/Xuwznln/LabDeviceExceptionDemo.git",
+      "version": "0.1.0",
+      "description": "异常捕获演示：跨设备动作异常捕获、业务级兜底与工作流失败传播。",
+      "homepage": "https://github.com/Xuwznln/LabDeviceExceptionDemo",
+      "devices": ["fault_injector_demo", "exception_supervisor_demo"],
+      "tags": ["demo", "exceptions", "error-handling"],
+      "official": true,
+      "category": "demo",
+      "maintainers": ["Xuwznln"]
+    }
+  ]
+}

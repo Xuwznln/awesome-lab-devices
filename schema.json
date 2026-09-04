@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/Xuwznln/awesome-lab-devices/main/schema.json",
+  "title": "awesome-lab-devices index",
+  "description": "Uni-Lab-OS 设备驱动包索引。OpenLab 前端读取 packages[]，把 spec 交给微后端 POST /api/v1/driver-packages/install；微后端也可把本文件配置为 HTTPConfig.driver_package_index_url 作为镜像。",
+  "type": "object",
+  "required": ["schema", "packages"],
+  "additionalProperties": true,
+  "properties": {
+    "schema": { "const": "awesome-lab-devices/v1" },
+    "name": { "type": "string" },
+    "description": { "type": "string" },
+    "homepage": { "type": "string", "format": "uri" },
+    "updated_at": { "type": "string", "description": "YYYY-MM-DD" },
+    "packages": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/package" }
+    }
+  },
+  "definitions": {
+    "package": {
+      "type": "object",
+      "required": ["name", "spec", "description", "devices"],
+      "additionalProperties": true,
+      "properties": {
+        "name": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$",
+          "description": "pyproject [project].name（分发名）。安装后微后端用它登记台账，大小写与 -/_ 不敏感。"
+        },
+        "spec": {
+          "type": "string",
+          "minLength": 1,
+          "description": "直接喂给 pip install 的规格：name==1.2、git+https://…、或 https://…/x.whl。不要用本地路径。"
+        },
+        "version": { "type": "string", "description": "索引维护者标注的当前版本，仅展示用。" },
+        "description": { "type": "string", "minLength": 1 },
+        "homepage": { "type": "string", "format": "uri" },
+        "devices": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[A-Za-z0-9_.-]+$" },
+          "description": "包内 @device(id=…) 列表，供搜索与配置设备时预览。"
+        },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "official": { "type": "boolean", "description": "缺省 true（本索引即官方索引）。社区维护的包标 false。" },
+        "category": { "type": "string", "enum": ["demo", "device", "workstation", "resource", "integration"] },
+        "maintainers": { "type": "array", "items": { "type": "string" } },
+        "min_unilabos": { "type": "string", "description": "要求的最低 unilabos 版本（PEP 440），仅展示用。" }
+      }
+    }
+  }
+}
