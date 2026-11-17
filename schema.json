@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://raw.githubusercontent.com/Xuwznln/awesome-lab-devices/main/schema.json",
   "title": "awesome-lab-devices index",
-  "description": "Uni-Lab-OS 设备驱动包索引。OpenLab 前端读取 packages[]，把 spec 交给微后端 POST /api/v1/driver-packages/install；微后端也可把本文件配置为 HTTPConfig.driver_package_index_url 作为镜像。",
+  "description": "Uni-Lab-OS 设备驱动包索引。OpenLab 前端读取 packages[]，把 spec 交给 Uni-Lab-OS 的 POST /api/v1/driver-packages/install；也可把本文件配置为 HTTPConfig.driver_package_index_url 作为镜像。",
   "type": "object",
   "required": ["schema", "packages"],
   "additionalProperties": true,
@@ -31,7 +31,7 @@
         "spec": {
           "type": "string",
           "minLength": 1,
-          "description": "直接喂给 pip install 的规格：name==1.2、git+https://…、或 https://…/x.whl。不要用本地路径。"
+          "description": "安装来源：GitHub 仓库（https://github.com/<owner>/<repo>[@ref] 或 git+https://github.com/<owner>/<repo>.git[@ref]）或 zip / tar.gz 归档地址。不要用本地路径。"
         },
         "version": { "type": "string", "description": "索引维护者标注的当前版本，仅展示用。" },
         "description": { "type": "string", "minLength": 1 },
