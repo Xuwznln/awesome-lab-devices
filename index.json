@@ -3,7 +3,7 @@
   "name": "awesome-lab-devices",
   "description": "Uni-Lab-OS 设备驱动包索引：OpenLab 前端从这里读取可安装目录，把 spec 交给调度权威 / Host 的 POST /api/v1/driver-packages/install，按源码树安装（依赖用 uv）。",
   "homepage": "https://github.com/Xuwznln/awesome-lab-devices",
-  "updated_at": "2026-11-19",
+  "updated_at": "2026-11-20",
   "packages": [
     {
       "name": "materials_demo",
@@ -20,9 +20,9 @@
     },
     {
       "name": "workstation_demo",
-      "spec": "git+https://github.com/Xuwznln/LabDeviceWorkstationDemo.git@de459fd2b8284c750072cb51499a5b27487b3afc",
+      "spec": "git+https://github.com/Xuwznln/LabDeviceWorkstationDemo.git@34fb987592976fbc3caa3eb9faa84bf57073f26d",
       "version": "0.2.0",
-      "min_unilabos": "0.13.0a1",
+      "min_unilabos": "0.13.0a2",
       "description": "工作站演示：hardware_interface 代理共享通信端点（串口 + Modbus / extra_info），一台工作站带多个子设备。",
       "homepage": "https://github.com/Xuwznln/LabDeviceWorkstationDemo",
       "devices": ["demo_workstation", "echo_reader", "io_mock_modbus", "modbus_sensor", "serial_mock"],
@@ -33,7 +33,7 @@
     },
     {
       "name": "lan_demo",
-      "spec": "git+https://github.com/Xuwznln/LabDeviceLanDemo.git@3a13bfce4434bc0d76393592cee1194173726c2b",
+      "spec": "git+https://github.com/Xuwznln/LabDeviceLanDemo.git@665fc241dc45303553d4f482d2b331ded8933637",
       "version": "0.2.0",
       "min_unilabos": "0.13.0a1",
       "description": "局域网双运行时演示：跨设备 @subscribe + call_device_action 闭环，Slave 经 HostLink 接入。",
@@ -46,7 +46,7 @@
     },
     {
       "name": "inventory_demo",
-      "spec": "git+https://github.com/Xuwznln/LabDeviceInventoryDemo.git@18dd2063a97372ded94364347aa5ec0f7a2b5d29",
+      "spec": "git+https://github.com/Xuwznln/LabDeviceInventoryDemo.git@5b5fdea031e1cd77756f64fa620c7472fdfee18a",
       "version": "0.1.0",
       "min_unilabos": "0.13.0a1",
       "description": "库存演示：试剂入库、按数量预留与出库扣减、整任务预检缺料直接失败。",
@@ -59,9 +59,9 @@
     },
     {
       "name": "lock_demo",
-      "spec": "git+https://github.com/Xuwznln/LabDeviceLockDemo.git@40a845ebf0c1961381d32cba10dd7fb0161dcbb5",
+      "spec": "git+https://github.com/Xuwznln/LabDeviceLockDemo.git@f5800117fa632204489e6d13cbcab733a0fe0a7c",
       "version": "0.1.0",
-      "min_unilabos": "0.13.0a1",
+      "min_unilabos": "0.13.0a2",
       "description": "调度锁演示：动作锁串行、always_free 并行、物料参数默认加锁按板互斥，从设备账本审计。",
       "homepage": "https://github.com/Xuwznln/LabDeviceLockDemo",
       "devices": ["lock_auditor_demo", "lock_probe_demo"],
@@ -72,7 +72,7 @@
     },
     {
       "name": "exception_demo",
-      "spec": "git+https://github.com/Xuwznln/LabDeviceExceptionDemo.git@ee09a45388c9d4056ba9feea570b91e50cdbd59f",
+      "spec": "git+https://github.com/Xuwznln/LabDeviceExceptionDemo.git@14cfc78095ad1c4b2fc67eba2a85acea81196409",
       "version": "0.1.0",
       "min_unilabos": "0.13.0a1",
       "description": "异常捕获演示：跨设备动作异常捕获、业务级兜底、错误决策与工作流失败传播。",
@@ -85,9 +85,9 @@
     },
     {
       "name": "complex_workflow_demo",
-      "spec": "git+https://github.com/Xuwznln/LabDeviceComplexWorkflowDemo.git@ae3edd005e3c25a0af6ad09e9558d92cdca09d74",
+      "spec": "git+https://github.com/Xuwznln/LabDeviceComplexWorkflowDemo.git@5516ff0242fe91db2bd9c475a0f4f6fdd1149b39",
       "version": "0.1.0",
-      "min_unilabos": "0.13.0a1",
+      "min_unilabos": "0.13.0a2",
       "description": "复杂工作流演示：for / while 循环容器按轮执行、静态 if / else、托管分装与库存结算、缺料走动作预检决策。",
       "homepage": "https://github.com/Xuwznln/LabDeviceComplexWorkflowDemo",
       "devices": ["virtual_reactor_demo"],
